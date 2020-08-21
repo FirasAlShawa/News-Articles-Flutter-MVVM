@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/viewmodels/news_article_list_view_model.dart';
@@ -28,8 +29,12 @@ class _NewsScreenState extends State<NewsScreen> {
             crossAxisCount: 2,
           ),
           itemBuilder: (context, index) {
-            return Text(
-              listViewModel.articles[index].title,
+            return GridTile(
+              child: Container(
+                child: CachedNetworkImage(
+                  imageUrl: listViewModel.articles[index].imageUrl,
+                ),
+              ),
             );
           },
           itemCount: listViewModel.articles.length,
