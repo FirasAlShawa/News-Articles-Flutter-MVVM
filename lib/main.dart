@@ -20,7 +20,13 @@ class MyApp extends StatelessWidget {
           color: Color(0xfffefdfd),
           elevation: 0,
           textTheme: TextTheme(
-            title: TextStyle(color: Colors.black),
+            title: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          iconTheme: IconThemeData(
+            color: Colors.black,
           ),
           actionsIconTheme: IconThemeData(color: Colors.black),
         ),
