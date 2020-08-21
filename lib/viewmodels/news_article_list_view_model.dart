@@ -1,5 +1,5 @@
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:news_app/models/news_article.dart';
 import 'package:news_app/services/web_service.dart';
 import 'package:news_app/viewmodels/new_article_view_model.dart';
