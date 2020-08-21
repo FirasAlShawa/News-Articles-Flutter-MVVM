@@ -1,4 +1,4 @@
-class NewArticle{
+class NewsArticle{
   final String title;
   final String auther;
   final String description;
@@ -7,11 +7,11 @@ class NewArticle{
   final String publishedAt;
   final String content;
 
-  NewArticle({this.title, this.auther, this.description, this.urlToImage,this.url,
+  NewsArticle({this.title, this.auther, this.description, this.urlToImage,this.url,
     this.publishedAt, this.content});
 
-  factory NewArticle.fromJson(Map<String,dynamic> json){
-    return NewArticle(
+  factory NewsArticle.fromJson(Map<String,dynamic> json){
+    return NewsArticle(
       title: json['title'],
       auther: json['auther'],
       description: json['description'],
