@@ -18,8 +18,20 @@ class NewsGrid extends StatelessWidget {
         var article = articles[index];
         return GridTile(
           child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
             child: CircleImage(
               imageUrl: article.imageUrl,
+            ),
+          ),
+          footer: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Text(
+              article.title,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         );

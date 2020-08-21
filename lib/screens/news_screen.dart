@@ -23,9 +23,46 @@ class _NewsScreenState extends State<NewsScreen> {
     var listViewModel = Provider.of<NewsArticleListViewModel>(context);
 
     return Scaffold(
-      appBar: AppBar(),
-      body: NewsGrid(
-        articles: listViewModel.articles,
+      appBar: AppBar(
+        actions: <Widget>[
+          Icon(Icons.more_vert),
+        ],
+      ),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: Text(
+                "News",
+                style: TextStyle(fontSize: 50),
+              ),
+            ),
+            Divider(
+              color: Color(0xffff8a30),
+              height: 40,
+              thickness: 8,
+              indent: 30,
+              endIndent: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30, top: 15, bottom: 15),
+              child: Text(
+                "HeadLine",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            Expanded(
+              child: NewsGrid(
+                articles: listViewModel.articles,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
