@@ -71,7 +71,7 @@ class NewsArticleDetailScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
             Text(
               this.article.publishedAt,
@@ -79,6 +79,9 @@ class NewsArticleDetailScreen extends StatelessWidget {
                 color: Colors.grey,
                 fontSize: 16,
               ),
+            ),
+            SizedBox(
+              height: 30,
             ),
             Container(
               height: 200,

@@ -9,7 +9,7 @@ class CircleImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl: imageUrl,
+      imageUrl: imageUrl ?? "",
       imageBuilder: (context, imageProvider) {
         return Container(
           decoration: BoxDecoration(

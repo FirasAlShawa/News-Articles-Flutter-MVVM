@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/utils/Constants.dart';
 import 'package:news_app/viewmodels/news_article_list_view_model.dart';
 import 'package:news_app/widgets/news_grid.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +25,22 @@ class _NewsScreenState extends State<NewsScreen> {
     return Scaffold(
       appBar: AppBar(
         actions: <Widget>[
-          Icon(Icons.more_vert),
+          PopupMenuButton(
+            onSelected: (country) {
+              listViewModel.topCountryHeadLines(Constants.Countries[country]);
+            },
+            icon: Icon(Icons.more_vert),
+            itemBuilder: (_) {
+              return Constants.Countries.keys
+                  .map(
+                    (v) => PopupMenuItem(
+                      value: v,
+                      child: Text(v),
+                    ),
+                  )
+                  .toList();
+            },
+          )
         ],
       ),
       body: SafeArea(
